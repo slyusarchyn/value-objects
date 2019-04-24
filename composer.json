@@ -1,0 +1,26 @@
+{
+    "name": "slyusarchyn/value-objects",
+    "description": "Value Objects",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "value objects",
+        "value-objects"
+    ],
+    "authors": [
+        {
+            "name": "Alexander Slyusarchyn",
+            "email": "sashaslyusarchyn@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "classmap": [
+            "src"
+        ],
+        "psr-4": {
+            "Slyusarchyn\\ValueObjects\\": "src"
+        }
+    }
+}
