@@ -1,14 +1,13 @@
 <?php
 
+namespace Slyusarchyn\ValueObjects\Identity;
 
-namespace Slyusarchyn\ValueObjects\Internet;
-
-use InvalidArgumentException;
+use Slyusarchyn\ValueObjects\Identity\Exceptions\InvalidEmailException;
 use Slyusarchyn\ValueObjects\ValueObject;
 
 /**
  * Class Email
- * @package Slyusarchyn\ValueObjects\Internet
+ * @package Slyusarchyn\ValueObjects\Identity
  */
 class Email extends ValueObject
 {
@@ -20,6 +19,7 @@ class Email extends ValueObject
     /**
      * Email constructor.
      * @param string $email
+     * @throws InvalidEmailException
      */
     public function __construct(string $email)
     {
@@ -29,12 +29,21 @@ class Email extends ValueObject
 
     /**
      * @param string $email
+     * @throws InvalidEmailException
      */
-    private function validate(string $email)
+    private function validate(string $email): void
     {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            throw new InvalidArgumentException("$email is not a valid e-mail address.");
+            throw new InvalidEmailException("\"$email\" is not a valid e-mail address.");
         }
+    }
+
+    /**
+     * @return string
+     */
+    public function get(): string
+    {
+        return $this->email;
     }
 
     /**

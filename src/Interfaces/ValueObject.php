@@ -6,7 +6,7 @@ namespace Slyusarchyn\ValueObjects\Interfaces;
  * Interface ValueObjectInterface
  * @package Slyusarchyn\Interfaces
  */
-interface ValueObjectInterface
+interface ValueObject
 {
     /**
      * @return string

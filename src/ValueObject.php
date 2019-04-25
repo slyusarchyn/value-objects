@@ -3,7 +3,7 @@
 namespace Slyusarchyn\ValueObjects;
 
 use InvalidArgumentException;
-use Slyusarchyn\ValueObjects\Interfaces\ValueObjectInterface;
+use Slyusarchyn\ValueObjects\Interfaces\ValueObject as ValueObjectInterface;
 
 /**
  * Class ValueObject
